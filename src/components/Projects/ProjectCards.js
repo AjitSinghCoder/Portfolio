@@ -34,6 +34,14 @@ function ProjectCards(props) {
           </Button>
         )}
       </Card.Body>
+      <Card.Footer className="d-flex flex-wrap justify-content-center">
+        {props.skills &&
+          props.skills.map((skill, index) => (
+            <span className="badge bg-white text-black m-1 px-1" key={index}>
+              {skill}
+            </span>
+          ))}
+      </Card.Footer>
     </Card>
   );
 }
