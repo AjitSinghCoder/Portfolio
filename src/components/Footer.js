@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-} from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { SiLeetcode } from "react-icons/si";
 
 import { FaLinkedinIn } from "react-icons/fa";
@@ -23,9 +21,9 @@ function Footer() {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                  href="https://github.com/programmeajit"
-                  style={{ color: "white" }}
-                target="_blank" 
+                href="https://github.com/AjitSinghCoder"
+                style={{ color: "white" }}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillGithub />
@@ -33,9 +31,9 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                  href="https://leetcode.com/u/ajitkrsingh841/"
-                  style={{ color: "white" }}
-                target="_blank" 
+                href="https://leetcode.com/u/ajitkrsingh841/"
+                style={{ color: "white" }}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <SiLeetcode />
@@ -45,7 +43,7 @@ function Footer() {
               <a
                 href="https://www.linkedin.com/in/ajitsingh841/"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaLinkedinIn />
