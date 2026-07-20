@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiDownload, FiTerminal, FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
+import { FiArrowRight, FiDownload, FiTerminal } from "react-icons/fi";
 import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from "react-icons/si";
-import { HERO_DATA, SKILLS_PREVIEW, ABOUT_DATA } from "../../config/data";
+import { HERO_DATA, SKILLS_PREVIEW } from "../../config/data";
 
 function Home() {
   return (

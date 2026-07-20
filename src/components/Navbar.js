@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiPhone } from "react-icons/fi";
 import { ABOUT_DATA } from "../config/data";
 
 const NAV_LINKS = [

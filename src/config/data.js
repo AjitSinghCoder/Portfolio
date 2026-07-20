@@ -2,11 +2,11 @@ import React from "react";
 import {
   SiPython, SiGo, SiCplusplus,
   SiFastapi, SiDjango, SiPostgresql, SiMysql, SiMongodb, SiRedis,
-  SiNextdotjs, SiReact, SiTypescript, SiHtml5, SiCss3, SiTailwindcss, SiBootstrap,
+  SiNextdotjs, SiHtml5, SiJavascript, SiTailwindcss, SiBootstrap,
   SiApachekafka, SiGooglecloud, SiAmazonaws, SiDocker, SiGit, SiGitlab, SiGithub, SiBitbucket, SiJira,
   SiLinux, SiWindows, SiApple, SiUbuntu
 } from "react-icons/si";
-import { FaDatabase, FaNetworkWired, FaServer, FaCogs, FaRobot } from "react-icons/fa";
+import { FaDatabase, FaNetworkWired, FaServer, FaCogs } from "react-icons/fa";
 
 export const HERO_DATA = {
   greeting: "Hi, my name is",
