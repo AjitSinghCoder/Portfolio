@@ -1,54 +1,95 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
-import Particle from "../Particle";
-import Home2 from "./Home2";
-import Type from "./Type";
-import Projects from "../Projects/Projects";
-import About from "../About/About";
-import ResumeNew from "../Resume/ResumeNew";
+import { Link } from "react-router-dom";
+import { FiArrowRight, FiDownload, FiTerminal } from "react-icons/fi";
+
+const SKILLS_PREVIEW = [
+  "Python", "FastAPI", "Django", "GoLang",
+  "Microservices", "Kafka", "Redis", "GCP",
+];
 
 function Home() {
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        <Particle />
-        <Container className="home-content">
-          <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
+    <main>
+      {/* Ambient background */}
+      <div className="bg-grid" aria-hidden="true" />
 
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> Ajit Singh</strong>
-              </h1>
+      {/* ── HERO ── */}
+      <section id="home" className="hero" aria-label="Introduction">
+        <div className="hero-bg-glow" aria-hidden="true" />
+        <div className="hero-inner">
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div>
-            </Col>
+          {/* Status badge */}
+          <div className="hero-status">
+            <span className="glow-dot" aria-hidden="true" />
+            Open to senior backend roles
+          </div>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-      <Home2 />
-      <Projects/>
-      <About/>
-      <ResumeNew/>
-    </section>
+          {/* Greeting */}
+          <p className="hero-eyebrow">Hi, my name is</p>
+
+          {/* Name */}
+          <h1 className="hero-name">Ajit Kumar Singh.</h1>
+
+          {/* Title */}
+          <h2 className="hero-title-line">
+            I build&nbsp;<strong>scalable backend</strong>&nbsp;systems.
+          </h2>
+
+          {/* Description */}
+          <p className="hero-desc">
+            Senior Software Developer with <strong>2.5+ years</strong> of experience designing and building scalable backend architectures and REST APIs using Django and FastAPI. Strong background in distributed systems, microservices, event-driven architectures, and cloud platforms (GCP, AWS), with hands-on experience in Kafka, Redis, Celery, and gRPC. Passionate about building high-availability, data-driven applications.
+          </p>
+
+          {/* Skill pills */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "2.5rem" }}>
+            {SKILLS_PREVIEW.map(s => (
+              <span key={s} className="badge-tech">{s}</span>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="hero-actions">
+            <a href="#project" className="btn-primary-custom" onClick={(e) => { e.preventDefault(); document.getElementById("project")?.scrollIntoView({ behavior: "smooth" }); }}>
+              View Projects <FiArrowRight />
+            </a>
+            <a href="#experience" className="btn-outline-custom" onClick={(e) => { e.preventDefault(); document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" }); }}>
+              My Experience
+            </a>
+            <a
+              href="/resume1.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline-custom"
+            >
+              <FiDownload /> Resume
+            </a>
+            <Link to="/terminal" className="btn-outline-custom" style={{ borderColor: '#50fa7b', color: '#50fa7b' }}>
+              <FiTerminal /> Do something Crazy
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-num">2.5+</span>
+              <span className="stat-label">Years experience</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">4+</span>
+              <span className="stat-label">Production apps</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">60%</span>
+              <span className="stat-label">Workflow automation</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-num">30%</span>
+              <span className="stat-label">API perf gain</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
