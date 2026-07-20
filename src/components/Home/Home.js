@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiDownload, FiTerminal } from "react-icons/fi";
-
-const SKILLS_PREVIEW = [
-  "Python", "FastAPI", "Django", "GoLang",
-  "Microservices", "Kafka", "Redis", "GCP",
-];
+import { FiArrowRight, FiDownload, FiTerminal, FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
+import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from "react-icons/si";
+import { HERO_DATA, SKILLS_PREVIEW, ABOUT_DATA } from "../../config/data";
 
 function Home() {
   return (
@@ -21,23 +18,21 @@ function Home() {
           {/* Status badge */}
           <div className="hero-status">
             <span className="glow-dot" aria-hidden="true" />
-            Open to senior backend roles
+            Open to senior backend / Tech lead roles
           </div>
 
           {/* Greeting */}
-          <p className="hero-eyebrow">Hi, my name is</p>
+          <p className="hero-eyebrow">{HERO_DATA.greeting}</p>
 
           {/* Name */}
-          <h1 className="hero-name">Ajit Kumar Singh.</h1>
+          <h1 className="hero-name">{HERO_DATA.name}</h1>
 
           {/* Title */}
-          <h2 className="hero-title-line">
-            I build&nbsp;<strong>scalable backend</strong>&nbsp;systems.
+          <h2 className="hero-title-line" dangerouslySetInnerHTML={{ __html: HERO_DATA.title }}>
           </h2>
 
           {/* Description */}
-          <p className="hero-desc">
-            Senior Software Developer with <strong>2.5+ years</strong> of experience designing and building scalable backend architectures and REST APIs using Django and FastAPI. Strong background in distributed systems, microservices, event-driven architectures, and cloud platforms (GCP, AWS), with hands-on experience in Kafka, Redis, Celery, and gRPC. Passionate about building high-availability, data-driven applications.
+          <p className="hero-desc" dangerouslySetInnerHTML={{ __html: HERO_DATA.desc }}>
           </p>
 
           {/* Skill pills */}
@@ -68,14 +63,16 @@ function Home() {
             </Link>
           </div>
 
+
+
           {/* Stats */}
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-num">2.5+</span>
+              <span className="stat-num">3+</span>
               <span className="stat-label">Years experience</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num">4+</span>
+              <span className="stat-num">10+</span>
               <span className="stat-label">Production apps</span>
             </div>
             <div className="stat-item">
@@ -83,13 +80,24 @@ function Home() {
               <span className="stat-label">Workflow automation</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num">30%</span>
-              <span className="stat-label">API perf gain</span>
+              <span className="stat-num">1000+</span>
+              <span className="stat-label">DSA Problems</span>
+              <div style={{ display: "flex", gap: "0.75rem", marginTop: "0.5rem" }}>
+                <a href="https://leetcode.com/u/ajitkrsingh841/" target="_blank" rel="noreferrer" style={{ color: "#FFA116", transition: "transform 0.2s" }} onMouseOver={e => e.currentTarget.style.transform = "translateY(-2px)"} onMouseOut={e => e.currentTarget.style.transform = "translateY(0)"}>
+                  <SiLeetcode size={20} />
+                </a>
+                <a href="https://www.geeksforgeeks.org/profile/ajit7367091304" target="_blank" rel="noreferrer" style={{ color: "#2F8D46", transition: "transform 0.2s" }} onMouseOver={e => e.currentTarget.style.transform = "translateY(-2px)"} onMouseOut={e => e.currentTarget.style.transform = "translateY(0)"}>
+                  <SiGeeksforgeeks size={20} />
+                </a>
+                <a href="https://www.hackerrank.com/profile/ajit7367091304" target="_blank" rel="noreferrer" style={{ color: "#00EA64", transition: "transform 0.2s" }} onMouseOver={e => e.currentTarget.style.transform = "translateY(-2px)"} onMouseOut={e => e.currentTarget.style.transform = "translateY(0)"}>
+                  <SiHackerrank size={20} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }
 

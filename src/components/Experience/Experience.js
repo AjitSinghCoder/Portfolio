@@ -1,40 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-
-const EXPERIENCES = [
-  {
-    id: "adani",
-    company: "Adani Green Energy Ltd",
-    role: "Sr Software Developer",
-    period: "Aug 2025 – Present",
-    location: "Ahmedabad, India",
-    type: "Off-roll",
-    bullets: [
-      "Designed and developed scalable backend services with Django for a renewable energy power forecasting platform used to manage GW-scale solar assets.",
-      "Built interactive dashboards for comparing forecast vs. actual generation across multiple ML models, enabling faster operational decisions.",
-      "Integrated satellite imagery and real-time / historical weather data (WMS APIs) to significantly improve forecasting accuracy.",
-      "Developed a Deviation Settlement Mechanism (DSM) penalty calculation dashboard to reduce regulatory compliance time.",
-      "Automated ~60% of manual workflows via Python automation scripts for data processing and scheduled report generation.",
-      "Maintained high-availability services using Redis for caching, Celery + RabbitMQ for async processing, and GitLab CI/CD for continuous delivery.",
-    ],
-    tech: ["Python", "Django", "Redis", "Celery", "PostgreSQL", "GitLab CI/CD", "GCP"],
-  },
-  {
-    id: "urbano",
-    company: "Urbano Infotech",
-    role: "Software Development Engineer II",
-    period: "Sep 2023 – Aug 2025",
-    location: "Ahmedabad, India",
-    type: "Full-time",
-    bullets: [
-      "Developed and maintained scalable backend services using Django REST Framework (DRF), consistently maintaining high API availability and performance.",
-      "Built an intelligent B2B chatbot with the RASA framework, automating customer interactions and reducing manual support volume.",
-      "Designed and implemented RESTful APIs with FastAPI, achieving ~30% improvement in response times through query optimisation and caching.",
-      "Managed multi-database environments spanning PostgreSQL, DynamoDB, and MongoDB, ensuring data integrity and performant queries.",
-      "Contributed to core microservices architecture for the Book You Pandit platform, including API Gateway design with FastAPI.",
-    ],
-    tech: ["FastAPI", "Django", "RASA", "PostgreSQL", "DynamoDB", "MongoDB", "Next.js"],
-  },
-];
+import { EXPERIENCES } from "../../config/data";
 
 function Experience() {
   const containerRef = useRef(null);
