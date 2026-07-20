@@ -2,7 +2,7 @@ import React from "react";
 import {
   SiPython, SiGo, SiCplusplus,
   SiFastapi, SiDjango, SiPostgresql, SiMysql, SiMongodb, SiRedis,
-  SiNextdotjs, SiHtml5, SiJavascript, SiTailwindcss, SiBootstrap,
+  SiNextdotjs, SiHtml5, SiTailwindcss, SiBootstrap,
   SiApachekafka, SiGooglecloud, SiAmazonaws, SiDocker, SiGit, SiGitlab, SiGithub, SiBitbucket, SiJira,
   SiLinux, SiWindows, SiApple, SiUbuntu
 } from "react-icons/si";
