@@ -17,20 +17,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Update activity file
-        run: |
-          echo "Updated at $(date)" >> activity.txt
-
-      - name: Commit changes
+      - name: Pull latest & Commit activity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Pull latest remote changes first to prevent push conflicts
+          git pull origin main
+
+          # Append current timestamp
+          echo "Updated at $(date)" >> activity.txt
+
+          # Commit & Push
           git add activity.txt
-
-          git diff --cached --quiet || git commit -m "chore: daily activity"
-
-      - name: Push
-        run: |
-          git pull --rebase origin main
-          git push origin main
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: daily activity"
+            git push origin main
+          fi
