@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
 import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -20,20 +21,22 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Preloader load={loading} />
-      <div className="App" id={loading ? "no-scroll" : undefined}>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/"           element={<Main />} />
-          <Route path="/terminal"   element={<TerminalView />} />
-          <Route path="/resume"     element={<Resume />} />
-          <Route path="*"           element={<Navigate to="/" replace />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Preloader load={loading} />
+        <div className="App" id={loading ? "no-scroll" : undefined}>
+          <Navbar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/"           element={<Main />} />
+            <Route path="/terminal"   element={<TerminalView />} />
+            <Route path="/resume"     element={<Resume />} />
+            <Route path="*"           element={<Navigate to="/" replace />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

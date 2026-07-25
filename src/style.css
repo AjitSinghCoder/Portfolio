@@ -13,7 +13,7 @@
 }
 
 .nav-root.scrolled {
-  background: rgba(4, 6, 15, 0.85);
+  background: var(--nav-bg-scrolled);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-color: var(--border);
@@ -131,7 +131,7 @@
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(4, 6, 15, 0.97);
+    background: var(--nav-mobile-bg);
     backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: center;
@@ -579,7 +579,7 @@
 .project-card:hover {
   transform: translateY(-6px);
   border-color: var(--border-strong);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--card-shadow);
 }
 
 .project-card:hover::before {
@@ -985,7 +985,7 @@
 .spotlight-card-wrapper:hover {
   border-color: var(--border-strong);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--card-shadow);
 }
 
 .spotlight-effect {

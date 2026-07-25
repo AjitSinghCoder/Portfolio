@@ -58,7 +58,7 @@ function Home() {
             >
               <FiDownload /> Resume
             </a>
-            <Link to="/terminal" className="btn-outline-custom" style={{ borderColor: '#50fa7b', color: '#50fa7b' }}>
+            <Link to="/terminal" className="btn-outline-custom btn-crazy">
               <FiTerminal /> Do something Crazy
             </Link>
           </div>

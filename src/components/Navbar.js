@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiGithub, FiLinkedin, FiPhone } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiPhone, FiSun, FiMoon } from "react-icons/fi";
 import { ABOUT_DATA } from "../config/data";
+import { useTheme } from "../context/ThemeContext";
 
 const NAV_LINKS = [
   { label: "Home", to: "#home" },
@@ -15,6 +16,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const { pathname } = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => {
@@ -88,6 +90,18 @@ function Navbar() {
             <a href={`tel:${ABOUT_DATA.phone.replace(/\s+/g, '')}`} style={{ color: "var(--text-1)", transition: "color 0.2s", display: 'flex', alignItems: 'center' }} onMouseOver={e => e.currentTarget.style.color = "var(--accent)"} onMouseOut={e => e.currentTarget.style.color = "var(--text-1)"}>
               <FiPhone size={20} />
             </a>
+          </li>
+
+          {/* Theme Toggle Button */}
+          <li>
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+            </button>
           </li>
 
           <li>

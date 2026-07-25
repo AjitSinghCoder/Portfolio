@@ -48,7 +48,7 @@ function SpotlightCard({ children, className = "", style = {} }) {
         className="spotlight-effect"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(91,156,246,0.15), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, var(--spotlight-glow, rgba(91,156,246,0.15)), transparent 40%)`,
         }}
       />
       <div className="spotlight-card-content">{children}</div>
